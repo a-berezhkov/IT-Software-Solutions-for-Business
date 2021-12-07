@@ -22,9 +22,9 @@
         </StackPanel>
 
         <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Button x:Name="AddMat" Margin="15" Content="Добавить" Click="AddMat_Click" Width="174" Background="#FFA5E887" VerticalAlignment="Center"/>
-            <Button x:Name="EditMat" Margin="15" Content="Изменить" Click="EditMat_Click" Width="174" Background="#FFA5E887" VerticalAlignment="Center"/>
-            <Button x:Name="DelMat" Margin="15" Content="Удалить" Click="DelMat_Click" Width="174" Background="#FFA5E887" VerticalAlignment="Center"/>
+            <Button x:Name="AddMat" Margin="15" Content="Добавить материал" Click="AddMat_Click" Width="174" Background="#FFA5E887" VerticalAlignment="Center"/>
+            <Button x:Name="EditMat" Margin="15" Content="Изменить материал" Click="EditMat_Click" Width="174" Background="#FFA5E887" VerticalAlignment="Center"/>
+            <Button x:Name="DelMat" Margin="15" Content="Удалить материал" Click="DelMat_Click" Width="174" Background="#FFA5E887" VerticalAlignment="Center"/>
         </StackPanel>
         <ListBox x:Name="lbMat" Grid.Row="1">
             <ListBox.ItemContainerStyle>
