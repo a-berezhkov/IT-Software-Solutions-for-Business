@@ -48,7 +48,7 @@
                             <RowDefinition/>
                             <RowDefinition/>
                         </Grid.RowDefinitions>
-                        <Image Grid.Column="0" Grid.RowSpan="3" Source="{Binding Image}" Width="75" Height="75"/>
+                        <Image Grid.Column="0" Grid.RowSpan="3" Source="{Binding ValidImage}" Width="75" Height="75"/>
 
                         <TextBlock Margin="3" Grid.Row="0" Grid.Column="1">
                             <Run Text="{Binding MaterialType.Title}"/>
@@ -63,7 +63,7 @@
 
                         <TextBlock  Margin="3" Grid.Row="2" Grid.Column="1">
                             <Run Text="Поставщики: "/>
-                            <Run Text="{Binding MaterialSupplier.SupplierId.Title}"/>
+                            <Run Text="{Binding ValidSuppliers, Mode=OneWay}"/>
                         </TextBlock>
                         <StackPanel Grid.RowSpan="3" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="100,0,0,0">
 
