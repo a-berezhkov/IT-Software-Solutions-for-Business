@@ -23,7 +23,7 @@ namespace SrezShend
         public int ID { get; set; }
         public string Title { get; set; }
         public string INN { get; set; }
-        public string StartDate { get; set; }
+        public System.DateTime StartDate { get; set; }
         public Nullable<int> QualityRating { get; set; }
         public string SupplierType { get; set; }
     

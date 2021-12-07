@@ -75,11 +75,9 @@ namespace SrezShend.Pages
         {
             try
             {
-
                 var matSelect = lbMat.SelectedItem;
                 if (MessageBox.Show("Удалить объект?", "Внимание", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
                 {
-
                     DB.db.Material.Remove((Material)matSelect);
                     DB.db.SaveChanges();
                     lbMat.ItemsSource = DB.db.Material.ToList();
@@ -90,7 +88,6 @@ namespace SrezShend.Pages
             {
 
             }
-
         }
 
         private void EditMat_Click(object sender, RoutedEventArgs e)

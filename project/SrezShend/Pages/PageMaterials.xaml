@@ -82,7 +82,13 @@
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="200px"/>
                         </Grid.ColumnDefinitions>
-
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Image Grid.Column="0" Grid.RowSpan="3" Source="{Binding ValidImage}" Width="75" Height="75"/>
                         <Border CornerRadius="5,5,5,5" 
                                 Grid.Column="0" 
                                 Grid.RowSpan="3" 
@@ -110,15 +116,10 @@
 
                             <TextBlock  Margin="3">
                             <Run Text="Поставщики: "/>
-                            <Run Text="{Binding MaterialSupplier.SupplierId.Title}"/>
-                            </TextBlock>
-                            
-                        </StackPanel>
-                        <StackPanel Grid.RowSpan="3" 
-                                    Grid.Column="2" 
-                                    HorizontalAlignment="Left" 
-                                    VerticalAlignment="Center" >
-                            
+                            <Run Text="{Binding ValidSuppliers, Mode=OneWay}"/>
+                        </TextBlock>
+                        <StackPanel Grid.RowSpan="3" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="100,0,0,0">
+
                             <TextBlock  Margin="3" >
                             <Run FontWeight="Bold" 
                                  Text="Остаток: "/>
