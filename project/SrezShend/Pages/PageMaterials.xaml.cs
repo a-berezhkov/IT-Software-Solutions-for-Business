@@ -16,6 +16,7 @@ namespace SrezShend.Pages
             InitializeComponent();
 
             lbMat.ItemsSource = DB.db.Material.ToList();
+            tbCountAll.Text = lbMat.Items.Count.ToString();
 
             cbFilter.Items.Add("Фильтрация");
             foreach (var matT in DB.db.MaterialType)
@@ -33,7 +34,6 @@ namespace SrezShend.Pages
         public void FindMat()
         {
             var mats = DB.db.Material.Where(x => x.Title.StartsWith(tbFind.Text)).ToList();
-
             switch (cbSort.SelectedIndex)
             {
                 case 0:; break;
@@ -47,6 +47,7 @@ namespace SrezShend.Pages
                 mats = mats.Where(x => x.MaterialType.Title == matType).ToList();
             }
             lbMat.ItemsSource = mats;
+            tbCount.Text = mats.Count.ToString();
         }
 
 
@@ -81,6 +82,7 @@ namespace SrezShend.Pages
                     DB.db.Material.Remove((Material)matSelect);
                     DB.db.SaveChanges();
                     lbMat.ItemsSource = DB.db.Material.ToList();
+                    tbCountAll.Text = lbMat.Items.Count.ToString();
                     MessageBox.Show("Объект удален");
                 }
             }
