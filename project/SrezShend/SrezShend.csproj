@@ -121,7 +121,7 @@
     <Compile Include="Supplier.cs">
       <DependentUpon>MaterialsModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="sysdiagrams.cs">
+    <Compile Include="SupplierType.cs">
       <DependentUpon>MaterialsModel.tt</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
@@ -234,6 +234,7 @@
       <DependentUpon>MaterialsModel.edmx</DependentUpon>
       <LastGenOutput>MaterialsModel.cs</LastGenOutput>
     </Content>
+    <Content Include="Moduel\db.sql" />
     <Resource Include="materials\Одежда для ручек.ico" />
     <Resource Include="materials\Одежда для ручек.png" />
   </ItemGroup>
