@@ -64,11 +64,11 @@
         </EntityType>
         <EntityType Name="MaterialSupplier">
           <Key>
-            <PropertyRef Name="MaterialID" />
-            <PropertyRef Name="SupplierID" />
+            <PropertyRef Name="Material_ID" />
+            <PropertyRef Name="Supplier_ID" />
           </Key>
-          <Property Name="MaterialID" Type="int" Nullable="false" />
-          <Property Name="SupplierID" Type="int" Nullable="false" />
+          <Property Name="Material_ID" Type="int" Nullable="false" />
+          <Property Name="Supplier_ID" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="MaterialType">
           <Key>
@@ -117,7 +117,7 @@
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="AgentID" Type="int" Nullable="false" />
           <Property Name="ProductID" Type="int" Nullable="false" />
-          <Property Name="SaleDate" Type="date" Nullable="false" />
+          <Property Name="SaleDate" Type="datetime" Nullable="false" />
           <Property Name="ProductCount" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="ProductType">
@@ -214,7 +214,7 @@
               <PropertyRef Name="ID" />
             </Principal>
             <Dependent Role="MaterialSupplier">
-              <PropertyRef Name="MaterialID" />
+              <PropertyRef Name="Material_ID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -226,7 +226,7 @@
               <PropertyRef Name="ID" />
             </Principal>
             <Dependent Role="MaterialSupplier">
-              <PropertyRef Name="SupplierID" />
+              <PropertyRef Name="Supplier_ID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -314,7 +314,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="Хранилище MaterialModelContainer">
+        <EntityContainer Name="MaterialModelStoreContainer">
           <EntitySet Name="Agent" EntityType="Self.Agent" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AgentPriorityHistory" EntityType="Self.AgentPriorityHistory" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AgentType" EntityType="Self.AgentType" Schema="dbo" store:Type="Tables" />
@@ -329,6 +329,7 @@
           <EntitySet Name="ProductType" EntityType="Self.ProductType" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Shop" EntityType="Self.Shop" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Supplier" EntityType="Self.Supplier" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SupplierType" EntityType="Self.SupplierType" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Agent_AgentType" Association="Self.FK_Agent_AgentType">
             <End Role="AgentType" EntitySet="AgentType" />
@@ -510,7 +511,7 @@
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="AgentID" Type="Int32" Nullable="false" />
           <Property Name="ProductID" Type="Int32" Nullable="false" />
-          <Property Name="SaleDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="SaleDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="ProductCount" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Agent" Relationship="Self.FK_ProductSale_Agent" FromRole="ProductSale" ToRole="Agent" />
           <NavigationProperty Name="Product" Relationship="Self.FK_ProductSale_Product" FromRole="ProductSale" ToRole="Product" />
@@ -944,7 +945,7 @@
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
         <DesignerProperty Name="EnablePluralization" Value="false" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
-        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
       </DesignerInfoPropertySet>
     </Options>
