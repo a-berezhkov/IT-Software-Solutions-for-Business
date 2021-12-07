@@ -733,16 +733,7 @@
             <End Role="Material" EntitySet="Material" />
             <End Role="Supplier" EntitySet="Supplier" />
           </AssociationSet>
-          <EntitySet Name="SupplierType" EntityType="MaterialModel.SupplierType" />
         </EntityContainer>
-        <EntityType Name="SupplierType">
-          <Key>
-            <PropertyRef Name="Id" />
-            <PropertyRef Name="Title" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Title" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
