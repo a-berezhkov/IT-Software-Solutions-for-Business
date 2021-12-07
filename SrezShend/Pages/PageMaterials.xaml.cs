@@ -79,12 +79,19 @@ namespace SrezShend.Pages
                 var matSelect = lbMat.SelectedItem;
                 if (MessageBox.Show("Удалить объект?", "Внимание", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
                 {
-
-                    DB.db.Material.Remove((Material)matSelect);
-                    DB.db.SaveChanges();
-                    lbMat.ItemsSource = DB.db.Material.ToList();
-                    MessageBox.Show("Объект удален");
+                    if (matSelect != null)
+                    {
+                        DB.db.Material.Remove((Material)matSelect);
+                        DB.db.SaveChanges();
+                        lbMat.ItemsSource = DB.db.Material.ToList();
+                        MessageBox.Show("Объект удален");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Выберите объект для удаления!", "Предупреждение");
+                    }
                 }
+                
             }
             catch (Exception ex)
             {
@@ -96,7 +103,14 @@ namespace SrezShend.Pages
         private void EditMat_Click(object sender, RoutedEventArgs e)
         {
             var matSelect = lbMat.SelectedItem;
-            FrameObj.frameMain.Navigate(new PageAddMat((Material)matSelect));
+            if (matSelect != null)
+            {
+                FrameObj.frameMain.Navigate(new PageAddMat((Material)matSelect));
+            }
+            else
+            {
+                MessageBox.Show("Выберите данные для изменения", "Предупреждение");
+            }
         }
     }
 }
