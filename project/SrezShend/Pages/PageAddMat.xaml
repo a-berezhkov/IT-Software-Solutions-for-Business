@@ -13,8 +13,9 @@
             <RowDefinition Height="38*"/>
             <RowDefinition Height="7*"/>
         </Grid.RowDefinitions>
-        <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Stretch">
-            <Button x:Name="btnSave" Content="Сохранить" Click="btnSave_Click" VerticalAlignment="Stretch" Width="174" Margin="10" HorizontalAlignment="Stretch" Background="#FFA5E887"/>
+
+        <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Margin="329,10" Width="142">
+            <Button x:Name="btnSave" Content="Сохранить" Click="btnSave_Click" Height="51" Background="#FFA5E887"/>
         </StackPanel>
         <Grid Grid.Row="0">
             <Grid.ColumnDefinitions>
@@ -73,7 +74,7 @@
                     <TextBlock Text="Стоимость"/>
                     <TextBox Name="tbCost" Margin="3"/>
                 </StackPanel>
-
+                
             </Grid>
         </Grid>
     </Grid>
