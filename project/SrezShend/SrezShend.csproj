@@ -121,9 +121,6 @@
     <Compile Include="Supplier.cs">
       <DependentUpon>MaterialsModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="SupplierType.cs">
-      <DependentUpon>MaterialsModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="sysdiagrams.cs">
       <DependentUpon>MaterialsModel.tt</DependentUpon>
     </Compile>
