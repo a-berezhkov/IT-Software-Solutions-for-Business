@@ -88,8 +88,6 @@
       <DependentUpon>MaterialsModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Moduel\DB.cs" />
-    <Compile Include="Moduel\Material.cs" />
-    <Compile Include="Moduel\Supplier.cs" />
     <Compile Include="Pages\PageAddMat.xaml.cs">
       <DependentUpon>PageAddMat.xaml</DependentUpon>
     </Compile>
@@ -121,6 +119,9 @@
       <DependentUpon>MaterialsModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Supplier.cs">
+      <DependentUpon>MaterialsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SupplierType.cs">
       <DependentUpon>MaterialsModel.tt</DependentUpon>
     </Compile>
     <Compile Include="sysdiagrams.cs">

@@ -12,19 +12,12 @@ namespace SrezShend
     using System;
     using System.Collections.Generic;
     
-    public partial class MaterialType
+    public partial class sysdiagrams
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public MaterialType()
-        {
-            this.Material = new HashSet<Material>();
-        }
-    
-        public int ID { get; set; }
-        public string Title { get; set; }
-        public Nullable<double> DefectedPercent { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Material> Material { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

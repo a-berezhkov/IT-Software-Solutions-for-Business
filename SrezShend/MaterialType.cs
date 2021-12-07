@@ -19,7 +19,11 @@ namespace SrezShend
         {
             this.Material = new HashSet<Material>();
         }
-    
+
+        public override string ToString()
+        {
+            return Title;
+        }
         public int ID { get; set; }
         public string Title { get; set; }
         public Nullable<double> DefectedPercent { get; set; }

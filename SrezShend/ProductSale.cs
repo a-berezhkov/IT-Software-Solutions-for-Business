@@ -12,19 +12,15 @@ namespace SrezShend
     using System;
     using System.Collections.Generic;
     
-    public partial class MaterialType
+    public partial class ProductSale
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public MaterialType()
-        {
-            this.Material = new HashSet<Material>();
-        }
-    
         public int ID { get; set; }
-        public string Title { get; set; }
-        public Nullable<double> DefectedPercent { get; set; }
+        public int AgentID { get; set; }
+        public int ProductID { get; set; }
+        public System.DateTime SaleDate { get; set; }
+        public int ProductCount { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Material> Material { get; set; }
+        public virtual Agent Agent { get; set; }
+        public virtual Product Product { get; set; }
     }
 }
