@@ -231,7 +231,6 @@
       <LastGenOutput>MaterialsModel.Context.cs</LastGenOutput>
       <DependentUpon>MaterialsModel.edmx</DependentUpon>
     </Content>
-    <Content Include="MaterialsModel.edmx.sql" />
     <Content Include="MaterialsModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>MaterialsModel.edmx</DependentUpon>
