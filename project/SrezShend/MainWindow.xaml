@@ -5,19 +5,28 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SrezShend"
         mc:Ignorable="d"
-        WindowStartupLocation="CenterScreen"
         Title="Одежда для ручек" Height="450" Width="800" MinWidth="800" MinHeight="500" Icon="materials/Одежда для ручек.ico">
     <Grid >
         <Grid.RowDefinitions>
-            <RowDefinition Height="73*"/>
-            <RowDefinition Height="346*"/>
+            <RowDefinition Height="60px"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <Grid Grid.Row="0" Background="#FFB3F4E9"/>
+        <Grid Grid.Row="0" 
+              Background="#FFB3F4E9"/>
         <StackPanel Orientation="Horizontal">
-            
-        <Image Source="materials/Одежда для ручек.png" HorizontalAlignment="Left"/>
-            <TextBlock Text="Одежда для ручек" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" Margin="15" Width="209"/>
+
+            <Image Source="materials/Одежда для ручек.png"
+                   HorizontalAlignment="Left" 
+                   Margin="10"/>
+
+            <TextBlock Text="Одежда для ручек" 
+                       HorizontalAlignment="Center" 
+                       VerticalAlignment="Center" 
+                       FontSize="20" 
+                       Margin="15" 
+                       Width="209"/>
+
         </StackPanel>
         <Button x:Name="btnBack" Content="Назад" Click="btnBack_Click" HorizontalAlignment="Right" Width="147" Height="40" Margin="10" Background="#FFA5E887"/>
         <Frame Name="FrmMain" Grid.Row="1" NavigationUIVisibility="Hidden" ContentRendered="FrmMain_ContentRendered"/>
