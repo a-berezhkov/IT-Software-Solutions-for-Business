@@ -39,6 +39,5 @@ namespace SrezShend
         public virtual DbSet<Shop> Shop { get; set; }
         public virtual DbSet<Supplier> Supplier { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
-        public virtual DbSet<SupplierType> SupplierType { get; set; }
     }
 }
