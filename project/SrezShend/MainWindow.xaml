@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SrezShend"
         mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
         Title="Одежда для ручек" Height="450" Width="800" MinWidth="800" MinHeight="500" Icon="materials/Одежда для ручек.ico">
     <Grid >
         <Grid.RowDefinitions>

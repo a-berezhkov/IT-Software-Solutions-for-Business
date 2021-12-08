@@ -13,18 +13,28 @@
             <RowDefinition Height="73*"/>
             <RowDefinition Height="316*"/>
             <RowDefinition Height="61*"/>
+            <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
 
         <StackPanel Orientation="Horizontal" Grid.Row="0">
             <TextBox x:Name="tbFind" Margin="10" TextChanged="tbFind_TextChanged" Width="196"/>
             <ComboBox Name="cbSort" Margin="10" SelectionChanged="cbSort_SelectionChanged" Width="199"/>
             <ComboBox Name="cbFilter" Margin="10" SelectionChanged="cbFilter_SelectionChanged" Width="199"/>
+            <StackPanel 
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Center" 
+                Orientation="Horizontal">
+                <TextBlock Text="Записей: "/>
+                <TextBlock x:Name="tbCount" Text="0"/>
+                <TextBlock Text=". Всего: "/>
+                <TextBlock x:Name="tbCountAll" Text="0"/>
+            </StackPanel>
         </StackPanel>
 
         <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Button x:Name="AddMat" Margin="15" Content="Добавить" Click="AddMat_Click" Width="174" Background="#FFA5E887" VerticalAlignment="Center"/>
-            <Button x:Name="EditMat" Margin="15" Content="Изменить" Click="EditMat_Click" Width="174" Background="#FFA5E887" VerticalAlignment="Center"/>
-            <Button x:Name="DelMat" Margin="15" Content="Удалить" Click="DelMat_Click" Width="174" Background="#FFA5E887" VerticalAlignment="Center"/>
+            <Button x:Name="AddMat" Margin="15" Content="Добавить материал" Click="AddMat_Click" Width="174" Background="#FFA5E887" VerticalAlignment="Center"/>
+            <Button x:Name="EditMat" Margin="15" Content="Изменить материал" Click="EditMat_Click" Width="174" Background="#FFA5E887" VerticalAlignment="Center"/>
+            <Button x:Name="DelMat" Margin="15" Content="Удалить материал" Click="DelMat_Click" Width="174" Background="#FFA5E887" VerticalAlignment="Center"/>
         </StackPanel>
         <ListBox x:Name="lbMat" Grid.Row="1">
             <ListBox.ItemContainerStyle>
