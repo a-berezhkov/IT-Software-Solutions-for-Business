@@ -13,6 +13,7 @@
             <RowDefinition Height="73*"/>
             <RowDefinition Height="316*"/>
             <RowDefinition Height="61*"/>
+            <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
 
         <StackPanel Orientation="Horizontal" Grid.Row="0">
