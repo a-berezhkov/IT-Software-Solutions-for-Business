@@ -15,64 +15,53 @@
             <RowDefinition Height="60px"/>
         </Grid.RowDefinitions>
 
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
+        <StackPanel Orientation="Horizontal" 
+                    Grid.Row="0" 
+                    HorizontalAlignment="Stretch">
 
             <TextBox  Name="tbFind"     
                       TextChanged="tbFind_TextChanged"           
-                      />
-            <ComboBox Name="cbSort" 
-                      Grid.Column="1"
+                      Width="200"/>
+            <ComboBox Name="cbSort"     
                       SelectionChanged="cbSort_SelectionChanged" 
-                      />
-            <ComboBox Name="cbFilter"  
-                      Grid.Column="2"
+                      Width="200"/>
+            <ComboBox Name="cbFilter"   
                       SelectionChanged="cbFilter_SelectionChanged" 
-                      />
+                      Width="200"/>
             <StackPanel 
-                      Grid.Column="3"
-                      HorizontalAlignment="Center" 
-                      VerticalAlignment="Center" 
-                      Orientation="Horizontal">
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Center" 
+                Orientation="Horizontal">
                 <TextBlock Text="Записей: "/>
                 <TextBlock x:Name="tbCount" Text="0"/>
                 <TextBlock Text=". Всего: "/>
                 <TextBlock x:Name="tbCountAll" Text="0"/>
             </StackPanel>
 
-        </Grid>
+        </StackPanel>
 
-        <Grid
-            Grid.Row="2">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
+        <StackPanel Orientation="Horizontal" 
+                    Grid.Row="2" 
+                    HorizontalAlignment="Center" 
+                    VerticalAlignment="Stretch">
 
             <Button x:Name="AddMat"  
                     Content="Добавить" 
                     Click="AddMat_Click" 
+                    Width="174" 
                     Background="#FFA5E887"/>
             <Button x:Name="EditMat" 
                     Content="Изменить" 
                     Click="EditMat_Click" 
-                    Background="#FFA5E887"
-                    Grid.Column="1"/>
+                    Width="174" 
+                    Background="#FFA5E887"/>
             <Button x:Name="DelMat" 
                     Content="Удалить" 
                     Click="DelMat_Click" 
-                    Background="#FFA5E887"
-                    Grid.Column="2"/>
-            <Label Grid.Column="3">Пагинация</Label>
+                    Width="174" 
+                    Background="#FFA5E887"/>
 
-        </Grid>
+        </StackPanel>
         <ListBox x:Name="lbMat" 
                  Grid.Row="1" 
                  HorizontalContentAlignment="Stretch">
@@ -109,7 +98,7 @@
                                 Margin="5" >
                             <Border.Background>
                                 <ImageBrush Stretch="UniformToFill" 
-                                            ImageSource="{Binding ValidImage}" />
+                                            ImageSource="{Binding Image}" />
                             </Border.Background>
                         </Border>
 
@@ -130,7 +119,7 @@
 
                             <TextBlock  Margin="3">
                             <Run Text="Поставщики: "/>
-                            <Run Text="{Binding ValidSuppliers, Mode=OneWay}"/>
+                            <Run Text="{Binding MaterialSupplier.SupplierId.Title}"/>
                             </TextBlock>
 
                         </StackPanel>
