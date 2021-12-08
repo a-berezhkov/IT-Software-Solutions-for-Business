@@ -9,7 +9,7 @@
       Title="PageMain">
 
     <Grid>
-        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Height="160" Margin="274,145" Width="252">
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Button x:Name="BtnMat" Click="BtnMat_Click" Margin="58,5" Content="Данные" HorizontalAlignment="Center" VerticalAlignment="Center" Height= "47" Width="136" Background="#FFA5E887"/>
             <Button x:Name="BtnHist" Click="BtnHist_Click" Margin="58,5" Height="47" Content="История Заказов" HorizontalAlignment="Center" VerticalAlignment="Center" Width="136" Background="#FFA5E887"/>
         </StackPanel>

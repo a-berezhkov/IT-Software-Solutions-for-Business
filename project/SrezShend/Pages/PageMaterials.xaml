@@ -14,7 +14,14 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="60px"/>
         </Grid.RowDefinitions>
-
+        <StackPanel Orientation="Horizontal" Grid.Row="0">
+            <TextBox x:Name="tbFind" Margin="10" TextChanged="tbFind_TextChanged" Width="196"/>
+            <ComboBox Name="cbSort" Margin="10" SelectionChanged="cbSort_SelectionChanged" Width="199"/>
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                <RadioButton x:Name="rbAsc" Content="По возрастанию" IsChecked="True" Click="radioButton_Click"/>
+                <RadioButton x:Name="rbDesc" Content="По убыванию" Click="radioButton_Click"/>
+            </StackPanel>
+            <ComboBox Name="cbFilter" Margin="10" SelectionChanged="cbFilter_SelectionChanged" Width="199"/>
         <StackPanel Orientation="Horizontal" 
                     Grid.Row="0" 
                     HorizontalAlignment="Stretch">
