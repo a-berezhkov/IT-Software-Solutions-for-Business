@@ -28,12 +28,23 @@ namespace SrezShend
 
             FrameObj.frameMain = FrmMain;
 
-            FrameObj.frameMain.Navigate(new PageMaterials());
+            FrameObj.frameMain.Navigate(new PageMain());
+            btnBack.Visibility = Visibility.Hidden;
         }
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
-            FrameObj.frameMain.Navigate(new PageMaterials());
+            FrameObj.frameMain.GoBack();
+        }
+
+        private void FrmMain_ContentRendered(object sender, EventArgs e)
+        {
+            if (FrameObj.frameMain.CanGoBack)
+            {
+                btnBack.Visibility = Visibility.Visible;
+            }
+            else
+                btnBack.Visibility = Visibility.Hidden;
         }
     }
 }
