@@ -1,4 +1,5 @@
-﻿using SrezShend.Moduel;
+﻿using SrezShend.Classes;
+using SrezShend.Moduel;
 using System;
 using System.Linq;
 using System.Windows;
@@ -11,6 +12,8 @@ namespace SrezShend.Pages
     /// </summary>
     public partial class PageMaterials : Page
     {
+        Switcher switcher;
+
         public PageMaterials()
         {
             InitializeComponent();
@@ -46,7 +49,8 @@ namespace SrezShend.Pages
                 string matType = cbFilter.SelectedItem.ToString();
                 mats = mats.Where(x => x.MaterialType.Title == matType).ToList();
             }
-            lbMat.ItemsSource = mats;
+
+            switcher = new Switcher(mats, lbMat);
         }
 
 
@@ -84,7 +88,7 @@ namespace SrezShend.Pages
                     MessageBox.Show("Объект удален");
                 }
             }
-            catch (Exception ex)
+            catch
             {
 
             }
