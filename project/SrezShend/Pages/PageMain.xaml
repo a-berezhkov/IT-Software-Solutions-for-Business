@@ -5,13 +5,22 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:SrezShend.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="750" d:DesignWidth="1000"
       Title="PageMain">
 
     <Grid>
-        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Button x:Name="BtnMat" Click="BtnMat_Click" Margin="58,5" Content="Данные" HorizontalAlignment="Center" VerticalAlignment="Center" Height= "47" Width="136" Background="#FFA5E887"/>
-            <Button x:Name="BtnHist" Click="BtnHist_Click" Margin="58,5" Height="47" Content="История Заказов" HorizontalAlignment="Center" VerticalAlignment="Center" Width="136" Background="#FFA5E887"/>
-        </StackPanel>
+        <Grid Margin="200">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Button x:Name="BtnMat" 
+                    Click="BtnMat_Click" 
+                    Content="Данные"/>
+            <Button x:Name="BtnHist" 
+                    Click="BtnHist_Click"
+                    Content="История Заказов"
+                    Grid.Row="1"/>
+        </Grid>
     </Grid>
 </Page>
