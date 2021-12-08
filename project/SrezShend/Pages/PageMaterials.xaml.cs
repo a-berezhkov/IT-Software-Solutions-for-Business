@@ -29,19 +29,42 @@ namespace SrezShend.Pages
             cbFilter.SelectedIndex = 0;
 
             cbSort.Items.Add("Сортировка");
-            cbSort.Items.Add("По Возрастанию");
-            cbSort.Items.Add("По Убыванию");
+            cbSort.Items.Add("По наименованию");
+            cbSort.Items.Add("По остаткам");
+            cbSort.Items.Add("По стоимости");
             cbSort.SelectedIndex = 0;
         }
 
         public void FindMat()
         {
-            var mats = DB.db.Material.Where(x => x.Title.StartsWith(tbFind.Text)).ToList();
+            var mats = DB.db.Material.Where(x => x.Title.Contains(tbFind.Text)).ToList();
+
             switch (cbSort.SelectedIndex)
             {
-                case 0:; break;
-                case 1: mats = mats.OrderBy(x => x.Title).ToList(); break;
-                case 2: mats = mats.OrderByDescending(x => x.Title).ToList(); break;
+                case 1:
+                    if (rbAsc.IsChecked == true)
+                    {
+                        mats = mats.OrderBy(m => m.Title).ToList();
+                    }
+                    else
+                        mats = mats.OrderByDescending(m => m.Title).ToList();
+                    break;
+                case 2:
+                    if (rbAsc.IsChecked == true)
+                    {
+                        mats = mats.OrderBy(m => m.CountInStock).ToList();
+                    }
+                    else
+                        mats = mats.OrderByDescending(m => m.CountInStock).ToList();
+                    break;
+                case 3:
+                    if (rbAsc.IsChecked == true)
+                    {
+                        mats = mats.OrderBy(m => m.Cost).ToList();
+                    }
+                    else
+                        mats = mats.OrderByDescending(m => m.Cost).ToList();
+                    break;
             }
 
             if (cbFilter.SelectedIndex > 0)
@@ -58,6 +81,16 @@ namespace SrezShend.Pages
         private void cbSort_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             FindMat();
+            if (cbSort.SelectedIndex == 0)
+            {
+                rbAsc.IsEnabled = false;
+                rbDesc.IsEnabled = false;
+            }
+            else
+            {
+                rbAsc.IsEnabled = true;
+                rbDesc.IsEnabled = true;
+            }
         }
 
         private void tbFind_TextChanged(object sender, TextChangedEventArgs e)
@@ -100,6 +133,11 @@ namespace SrezShend.Pages
         {
             var matSelect = lbMat.SelectedItem;
             FrameObj.frameMain.Navigate(new PageAddMat((Material)matSelect));
+        }
+
+        private void radioButton_Click(object sender, RoutedEventArgs e)
+        {
+            FindMat();
         }
     }
 }

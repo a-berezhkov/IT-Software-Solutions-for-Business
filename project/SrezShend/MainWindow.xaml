@@ -20,6 +20,6 @@
             <TextBlock Text="Одежда для ручек" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" Margin="15" Width="209"/>
         </StackPanel>
         <Button x:Name="btnBack" Content="Назад" Click="btnBack_Click" HorizontalAlignment="Right" Width="147" Height="40" Margin="10" Background="#FFA5E887"/>
-        <Frame Name="FrmMain" Grid.Row="1" NavigationUIVisibility="Hidden"/>
+        <Frame Name="FrmMain" Grid.Row="1" NavigationUIVisibility="Hidden" ContentRendered="FrmMain_ContentRendered"/>
     </Grid>
 </Window>
