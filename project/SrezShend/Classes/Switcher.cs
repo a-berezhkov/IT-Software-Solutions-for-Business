@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 using System.Windows.Media;
 
 namespace SrezShend.Classes
@@ -11,11 +13,12 @@ namespace SrezShend.Classes
     public class Switcher
     {
         private Grid _gridSwitcher = new Grid();
+        private int _fontSize = 16;
 
         private List<Material> _materials = new List<Material>();
         private ListBox _lbMaterial;
         private const int _maxMaterialsInPage = 15;
-
+        private Brush _mainColor = (Brush)new BrushConverter().ConvertFrom("#FFA5E887");
         private StackPanel _spSwitcherPages = new StackPanel();
         private List<TextBlock> _tblSwitcherPages = new List<TextBlock>();
         private int _pageNumber = 0;
@@ -56,6 +59,8 @@ namespace SrezShend.Classes
             TextBlock tblBack = new TextBlock();
             tblBack.Text = "<";
             tblBack.MouseLeftButtonDown += TblBack_MouseLeftButtonDown;
+            tblBack.FontSize = _fontSize;
+            tblBack.FontWeight = FontWeights.Bold;
             Grid.SetColumn(tblBack, 0);
             _gridSwitcher.Children.Add(tblBack);
 
@@ -67,6 +72,8 @@ namespace SrezShend.Classes
             TextBlock tblNext = new TextBlock();
             tblNext.Text = ">";
             tblNext.MouseLeftButtonDown += TblNext_MouseLeftButtonDown;
+            tblNext.FontWeight = FontWeights.Bold;
+            tblNext.FontSize = _fontSize;
             Grid.SetColumn(tblNext, 2);
             _gridSwitcher.Children.Add(tblNext);
         }
@@ -82,6 +89,7 @@ namespace SrezShend.Classes
                 tblPage.Text = "1";
                 tblPage.TextAlignment = System.Windows.TextAlignment.Center;
                 tblPage.MinWidth = 25;
+                tblPage.FontSize = _fontSize;
                 _tblSwitcherPages.Add(tblPage);
                 return;
             }
@@ -92,6 +100,9 @@ namespace SrezShend.Classes
                 tblPage.Text = (i / _maxMaterialsInPage + 1).ToString();
                 tblPage.TextAlignment = System.Windows.TextAlignment.Center;
                 tblPage.MinWidth = 25;
+                tblPage.FontSize= _fontSize;
+                tblPage.Cursor = Cursors.Hand;
+                tblPage.FontWeight = FontWeights.Bold;
                 tblPage.MouseLeftButtonDown += TblPage_MouseLeftButtonDown;
                 _tblSwitcherPages.Add(tblPage);
             }
@@ -148,7 +159,7 @@ namespace SrezShend.Classes
                 }
             }
 
-            _tblSwitcherPages[_pageNumber].Foreground = Brushes.Red;
+            _tblSwitcherPages[_pageNumber].Foreground = _mainColor;
         }
 
         /// <summary>

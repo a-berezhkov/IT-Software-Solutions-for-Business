@@ -72,9 +72,11 @@ namespace SrezShend.Pages
                 string matType = cbFilter.SelectedItem.ToString();
                 mats = mats.Where(x => x.MaterialType.Title == matType).ToList();
             }
-            lbMat.ItemsSource = mats;
             tbCount.Text = mats.Count.ToString();
             switcher = new Switcher(mats, lbMat);
+
+            gridSwitcher.Children.Clear();
+            gridSwitcher.Children.Add(switcher.GridSwitcher);
         }
 
 
