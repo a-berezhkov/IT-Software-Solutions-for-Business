@@ -13,7 +13,9 @@ namespace SrezShend.Pages
     /// </summary>
     public partial class PageAddMat : Page
     {
+        WindowSelectImage windowSelectImage;
         Material mat;
+
         public PageAddMat(Material mat)
         {
             InitializeComponent();
@@ -54,13 +56,12 @@ namespace SrezShend.Pages
 
         private void btnAddImage_Click(object sender, RoutedEventArgs e)
         {
-            WindowSelectImage windowSelectImage = new WindowSelectImage("../../materials");
+            windowSelectImage = new WindowSelectImage("../../materials");
             windowSelectImage.ShowDialog();
 
             if (windowSelectImage.DialogResult == true)
             {
-                mat.Image = windowSelectImage.imgUri;
-                imgMaterial.Source = new BitmapImage(new Uri(mat.ValidImage, UriKind.Relative));
+                imgMaterial.Source = new BitmapImage(new Uri(windowSelectImage.imgUri, UriKind.Relative));
             }
         }
 
@@ -75,7 +76,6 @@ namespace SrezShend.Pages
             }
             else
             {
-
                 mat.Title = tbTitle.Text;
                 mat.CountInPack = int.Parse(tbCountInPack.Text);
                 mat.Unit = tbUnit.Text;
@@ -83,7 +83,7 @@ namespace SrezShend.Pages
                 mat.MinCount = int.Parse(tbMinCount.Text);
                 mat.Cost = int.Parse(tbCost.Text, System.Globalization.NumberStyles.Any);
                 mat.MaterialType = (MaterialType)cbType.SelectedItem;
-                //mat.Image = tbImage.Text;
+                mat.Image = windowSelectImage.imgUri;
                 if (mat.ID == 0)
                 {
                     DB.db.Material.Add(mat);
@@ -92,7 +92,6 @@ namespace SrezShend.Pages
 
                 FrameObj.frameMain.Navigate(new PageMaterials());
             }
-
         }
 
         private void DelMat_Click(object sender, RoutedEventArgs e)
