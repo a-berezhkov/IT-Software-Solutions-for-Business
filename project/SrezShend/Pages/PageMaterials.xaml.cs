@@ -33,6 +33,8 @@ namespace SrezShend.Pages
             cbSort.Items.Add("По остаткам");
             cbSort.Items.Add("По стоимости");
             cbSort.SelectedIndex = 0;
+
+            EditMat.Visibility = Visibility.Hidden;
         }
 
         public void FindMat()
@@ -111,26 +113,6 @@ namespace SrezShend.Pages
             FrameObj.frameMain.Navigate(new PageAddMat(new Material()));
         }
 
-        private void DelMat_Click(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                var matSelect = lbMat.SelectedItem;
-                if (MessageBox.Show("Удалить объект?", "Внимание", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
-                {
-                    DB.db.Material.Remove((Material)matSelect);
-                    DB.db.SaveChanges();
-                    lbMat.ItemsSource = DB.db.Material.ToList();
-                    tbCountAll.Text = lbMat.Items.Count.ToString();
-                    MessageBox.Show("Объект удален");
-                }
-            }
-            catch
-            {
-
-            }
-        }
-
         private void EditMat_Click(object sender, RoutedEventArgs e)
         {
             var matSelect = lbMat.SelectedItem;
@@ -140,6 +122,14 @@ namespace SrezShend.Pages
         private void radioButton_Click(object sender, RoutedEventArgs e)
         {
             FindMat();
+        }
+
+        private void lbMat_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (lbMat.SelectedItem != null)
+            {
+                EditMat.Visibility = Visibility.Visible;
+            }
         }
     }
 }
