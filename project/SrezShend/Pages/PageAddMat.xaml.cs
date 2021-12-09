@@ -1,8 +1,10 @@
 ﻿using Microsoft.Win32;
 using SrezShend.Moduel;
+using System;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media.Imaging;
 
 namespace SrezShend.Pages
 {
@@ -40,26 +42,25 @@ namespace SrezShend.Pages
 
             if (mat.MaterialType == null)
             {
+                imgMaterial.Source = new BitmapImage(new Uri("../materials/picture.png", UriKind.Relative));
                 cbType.SelectedIndex = 0;
             }
             else
             {
+                imgMaterial.Source = new BitmapImage(new Uri(mat.ValidImage, UriKind.Relative));
                 cbType.SelectedItem = mat.MaterialType;
             }
-
-            tbImage.Text = mat.Image;
         }
 
         private void btnAddImage_Click(object sender, RoutedEventArgs e)
         {
-            OpenFileDialog op = new OpenFileDialog();
-            op.Title = "Выберите изображение";
-            op.Filter = "All supported graphics|*.jpg;*.jpeg;*.png|" +
-                "JPEG (*.jpg;*.jpeg)|*.jpg;*.jpeg|" +
-                "Portable Network Graphic (*.png)|*.png";
-            if (op.ShowDialog() == true)
+            WindowSelectImage windowSelectImage = new WindowSelectImage("../../materials");
+            windowSelectImage.ShowDialog();
+
+            if (windowSelectImage.DialogResult == true)
             {
-                tbImage.Text = op.FileName;
+                mat.Image = windowSelectImage.imgUri;
+                imgMaterial.Source = new BitmapImage(new Uri(mat.ValidImage, UriKind.Relative));
             }
         }
 
@@ -82,7 +83,7 @@ namespace SrezShend.Pages
                 mat.MinCount = int.Parse(tbMinCount.Text);
                 mat.Cost = int.Parse(tbCost.Text, System.Globalization.NumberStyles.Any);
                 mat.MaterialType = (MaterialType)cbType.SelectedItem;
-                mat.Image = tbImage.Text;
+                //mat.Image = tbImage.Text;
                 if (mat.ID == 0)
                 {
                     DB.db.Material.Add(mat);
@@ -102,7 +103,7 @@ namespace SrezShend.Pages
                 {
                     DB.db.Material.Remove(mat);
                     DB.db.SaveChanges();
-                    
+
                     MessageBox.Show("Объект удален");
 
                     FrameObj.frameMain.Navigate(new PageMaterials());

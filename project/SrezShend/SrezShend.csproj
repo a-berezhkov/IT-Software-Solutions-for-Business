@@ -103,6 +103,9 @@
     <Compile Include="Pages\PageMaterials.xaml.cs">
       <DependentUpon>PageMaterials.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\WindowSelectImage.xaml.cs">
+      <DependentUpon>WindowSelectImage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Product.cs">
       <DependentUpon>MaterialsModel.tt</DependentUpon>
     </Compile>
@@ -152,6 +155,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\PageMaterials.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\WindowSelectImage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
