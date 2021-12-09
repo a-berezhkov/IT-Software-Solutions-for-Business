@@ -93,5 +93,25 @@ namespace SrezShend.Pages
             }
 
         }
+
+        private void DelMat_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                if (MessageBox.Show("Удалить объект?", "Внимание", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+                {
+                    DB.db.Material.Remove(mat);
+                    DB.db.SaveChanges();
+                    
+                    MessageBox.Show("Объект удален");
+
+                    FrameObj.frameMain.Navigate(new PageMaterials());
+                }
+            }
+            catch
+            {
+
+            }
+        }
     }
 }

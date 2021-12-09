@@ -93,7 +93,7 @@
         </Grid>
         <ListBox x:Name="lbMat" 
                  Grid.Row="1" 
-                 HorizontalContentAlignment="Stretch">
+                 HorizontalContentAlignment="Stretch" SelectionChanged="lbMat_SelectionChanged">
             <ListBox.ItemContainerStyle>
                 <Style TargetType="ListBoxItem">
                     <Setter Property="BorderBrush" 
