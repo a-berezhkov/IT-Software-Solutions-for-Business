@@ -117,6 +117,7 @@
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="120px"/>
+                            <ColumnDefinition Width="600px"/>
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="200px"/>
                         </Grid.ColumnDefinitions>
@@ -131,7 +132,6 @@
                             </Border.Background>
                         </Border>
 
-
                         <StackPanel Orientation="Vertical" 
                                     Grid.Column="1">
 
@@ -145,16 +145,16 @@
                             <Run Text="Минимальное количество: "/>
                             <Run Text="{Binding MinCount}"/>
                             </TextBlock>
-                            
+
                             <!-- TODO: Добваить перенос поставщиков по строкам -->
-                            <TextBlock  Margin="3" TextWrapping="Wrap">
-                            <Run Text="Поставщики: "/>
-                            <Run Text="{Binding ValidSuppliers, Mode=OneWay}"/>
-                            </TextBlock>
+                            <StackPanel  Margin="3" Orientation="Horizontal">
+                                <TextBlock Text="Поставщики: " HorizontalAlignment="Stretch" VerticalAlignment="Top"/>
+                                <TextBlock TextWrapping="WrapWithOverflow" Text="{Binding ValidSuppliers, Mode=OneWay}" Width="500" />
+                            </StackPanel>
 
                         </StackPanel>
                         <StackPanel Grid.RowSpan="3" 
-                                    Grid.Column="2" 
+                                    Grid.Column="3" 
                                     HorizontalAlignment="Left" 
                                     VerticalAlignment="Center" >
 

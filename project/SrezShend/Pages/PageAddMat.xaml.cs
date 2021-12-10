@@ -88,7 +88,7 @@ namespace SrezShend.Pages
                 mat.MaterialType = (MaterialType)cbType.SelectedItem;
                 if(windowSelectImage != null)
                 {
-                    mat.Image = windowSelectImage.imgUri.Remove(0,4);
+                    mat.Image = windowSelectImage.imgUri;
                 }
                 
                 if (mat.ID == 0)
@@ -118,6 +118,14 @@ namespace SrezShend.Pages
             catch
             {
 
+            }
+        }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (mat.ID == 0)
+            {
+                DelMat.Visibility = Visibility.Hidden;
             }
         }
     }
