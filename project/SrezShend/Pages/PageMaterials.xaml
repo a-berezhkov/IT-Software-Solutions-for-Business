@@ -103,6 +103,7 @@
                     <Setter Property="Margin" 
                             Value="5"/>
                     <Setter Property="FontSize" Value="18" />
+                    <Setter Property="Background" Value="{Binding MaterialBackground}"/>
                     <Style.Resources>
                         <Style TargetType="Border">
                             <Setter Property="CornerRadius" 

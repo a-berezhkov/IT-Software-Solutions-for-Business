@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Windows.Media;
 
 namespace SrezShend
 {
@@ -33,6 +32,24 @@ namespace SrezShend
                 }
                 else suppliers = "Отсутствуют.";
                 return suppliers;
+            }
+        }
+
+        public Brush MaterialBackground
+        {
+            get
+            {
+                DateTime today = DateTime.Now;
+                today = today.AddYears(-4);
+                foreach (var supplier in Supplier)
+                {
+                    if (supplier.StartDate > today.AddMonths(-1))
+                    {
+                        return (Brush)new BrushConverter().ConvertFrom("#ef9a9a");
+                    }
+                }
+
+                return null;
             }
         }
     }
