@@ -1,6 +1,7 @@
 ﻿using SrezShend.Classes;
 using SrezShend.Moduel;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
@@ -17,6 +18,7 @@ namespace SrezShend.Pages
         public PageMaterials()
         {
             InitializeComponent();
+            DBimgPathRename();
 
             lbMat.ItemsSource = DB.db.Material.ToList();
             tbCountAll.Text = lbMat.Items.Count.ToString();
@@ -130,6 +132,23 @@ namespace SrezShend.Pages
             {
                 EditMat.Visibility = Visibility.Visible;
             }
+        }
+        private void DBimgPathRename()
+        {
+            List<Material> materials = DB.db.Material.ToList();
+
+            for (int i = 0; i < materials.Count; i++)
+            {
+                if(materials[i].Image != null)
+                {
+                    if (materials[i].Image.StartsWith("/materials/"))
+                    {
+                        materials[i].Image = "/img" + materials[i].Image;
+                    }
+                }
+                
+            }
+            DB.db.SaveChanges();
         }
     }
 }

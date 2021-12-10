@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:SrezShend.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="750" d:DesignWidth="1000"
-      Title="PageAddMat">
+      Title="PageAddMat" Loaded="Page_Loaded">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="38*"/>

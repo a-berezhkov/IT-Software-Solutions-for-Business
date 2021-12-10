@@ -78,7 +78,7 @@ namespace SrezShend.Pages
             foreach (var file in files)
             {
                 FileInfo fileInfo = new FileInfo(file);
-                correctFiles.Add("/materials/" + fileInfo.Name);
+                correctFiles.Add("/img/materials/" + fileInfo.Name);
             }
 
             return correctFiles.ToArray();

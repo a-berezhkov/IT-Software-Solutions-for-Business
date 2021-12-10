@@ -12,7 +12,7 @@ namespace SrezShend
         {
             get 
             { 
-                if (String.IsNullOrWhiteSpace(Image) || String.IsNullOrEmpty(Image)) return @"\materials\picture.png";
+                if (String.IsNullOrWhiteSpace(Image) || String.IsNullOrEmpty(Image)) return @"\img\materials\picture.png";
                 else return Image;
             }
         }

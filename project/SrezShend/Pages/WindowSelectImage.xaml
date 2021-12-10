@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:SrezShend.Pages"
         mc:Ignorable="d"
         Title="Выбор картинки" Height="500" Width="500"
-        ResizeMode="NoResize" Icon="../materials/Одежда для ручек.ico"
+        ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen">
     
     <Grid Name="gridMain"/>

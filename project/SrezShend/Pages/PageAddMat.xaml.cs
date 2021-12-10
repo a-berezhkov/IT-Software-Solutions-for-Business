@@ -23,6 +23,9 @@ namespace SrezShend.Pages
             this.mat = mat;
 
             cbType.ItemsSource = DB.db.MaterialType.ToList();
+            cbType.DisplayMemberPath = "Title";
+            cbType.SelectedValuePath = "ID";
+
 
             if (mat != null)
             {
@@ -44,7 +47,7 @@ namespace SrezShend.Pages
 
             if (mat.MaterialType == null)
             {
-                imgMaterial.Source = new BitmapImage(new Uri("../materials/picture.png", UriKind.Relative));
+                imgMaterial.Source = new BitmapImage(new Uri("../img/materials/picture.png", UriKind.Relative));
                 cbType.SelectedIndex = 0;
             }
             else
@@ -56,7 +59,7 @@ namespace SrezShend.Pages
 
         private void btnAddImage_Click(object sender, RoutedEventArgs e)
         {
-            windowSelectImage = new WindowSelectImage("../../materials");
+            windowSelectImage = new WindowSelectImage("../../img/materials");
             windowSelectImage.ShowDialog();
 
             if (windowSelectImage.DialogResult == true)
@@ -83,7 +86,11 @@ namespace SrezShend.Pages
                 mat.MinCount = int.Parse(tbMinCount.Text);
                 mat.Cost = int.Parse(tbCost.Text, System.Globalization.NumberStyles.Any);
                 mat.MaterialType = (MaterialType)cbType.SelectedItem;
-                mat.Image = windowSelectImage.imgUri;
+                if(windowSelectImage != null)
+                {
+                    mat.Image = windowSelectImage.imgUri;
+                }
+                
                 if (mat.ID == 0)
                 {
                     DB.db.Material.Add(mat);
@@ -111,6 +118,14 @@ namespace SrezShend.Pages
             catch
             {
 
+            }
+        }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (mat.ID == 0)
+            {
+                DelMat.Visibility = Visibility.Hidden;
             }
         }
     }
