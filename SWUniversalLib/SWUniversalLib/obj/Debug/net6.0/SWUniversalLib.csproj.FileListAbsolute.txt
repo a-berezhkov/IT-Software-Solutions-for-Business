@@ -1,0 +1,12 @@
+C:\Users\10180027\Source\Repos\SWUniversalLib\SWUniversalLib\bin\Debug\net6.0\SWUniversalLib.deps.json
+C:\Users\10180027\Source\Repos\SWUniversalLib\SWUniversalLib\bin\Debug\net6.0\SWUniversalLib.dll
+C:\Users\10180027\Source\Repos\SWUniversalLib\SWUniversalLib\bin\Debug\net6.0\ref\SWUniversalLib.dll
+C:\Users\10180027\Source\Repos\SWUniversalLib\SWUniversalLib\bin\Debug\net6.0\SWUniversalLib.pdb
+C:\Users\10180027\Source\Repos\SWUniversalLib\SWUniversalLib\obj\Debug\net6.0\SWUniversalLib.csproj.AssemblyReference.cache
+C:\Users\10180027\Source\Repos\SWUniversalLib\SWUniversalLib\obj\Debug\net6.0\SWUniversalLib.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\10180027\Source\Repos\SWUniversalLib\SWUniversalLib\obj\Debug\net6.0\SWUniversalLib.AssemblyInfoInputs.cache
+C:\Users\10180027\Source\Repos\SWUniversalLib\SWUniversalLib\obj\Debug\net6.0\SWUniversalLib.AssemblyInfo.cs
+C:\Users\10180027\Source\Repos\SWUniversalLib\SWUniversalLib\obj\Debug\net6.0\SWUniversalLib.csproj.CoreCompileInputs.cache
+C:\Users\10180027\Source\Repos\SWUniversalLib\SWUniversalLib\obj\Debug\net6.0\SWUniversalLib.dll
+C:\Users\10180027\Source\Repos\SWUniversalLib\SWUniversalLib\obj\Debug\net6.0\ref\SWUniversalLib.dll
+C:\Users\10180027\Source\Repos\SWUniversalLib\SWUniversalLib\obj\Debug\net6.0\SWUniversalLib.pdb
