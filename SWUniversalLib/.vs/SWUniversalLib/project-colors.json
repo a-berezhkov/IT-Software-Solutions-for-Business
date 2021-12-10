@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "f37f0b72-1d4a-4045-bde9-a39631445de4": {
+      "ProjectGuid": "f37f0b72-1d4a-4045-bde9-a39631445de4",
+      "DisplayName": "SWUniversalLib",
+      "ColorIndex": 0
+    },
+    "34f47318-cb30-46fe-900d-b1f3a2342019": {
+      "ProjectGuid": "34f47318-cb30-46fe-900d-b1f3a2342019",
+      "DisplayName": "Tests",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
+}
