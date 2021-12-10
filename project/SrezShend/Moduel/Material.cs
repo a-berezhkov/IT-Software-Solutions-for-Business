@@ -12,8 +12,8 @@ namespace SrezShend
         {
             get 
             { 
-                if (String.IsNullOrWhiteSpace(Image) || String.IsNullOrEmpty(Image)) return @"\materials\picture.png";
-                else return Image;
+                if (String.IsNullOrWhiteSpace(Image) || String.IsNullOrEmpty(Image)) return @"\img\materials\picture.png";
+                else return @"/img"+Image;
             }
         }
         public string ValidSuppliers

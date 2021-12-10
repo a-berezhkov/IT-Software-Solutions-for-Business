@@ -209,29 +209,29 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="materials\material_1.jpeg" />
-    <Resource Include="materials\material_10.jpeg" />
-    <Resource Include="materials\material_11.jpeg" />
-    <Resource Include="materials\material_12.jpeg" />
-    <Resource Include="materials\material_13.jpeg" />
-    <Resource Include="materials\material_14.jpeg" />
-    <Resource Include="materials\material_15.jpeg" />
-    <Resource Include="materials\material_16.jpeg" />
-    <Resource Include="materials\material_17.jpeg" />
-    <Resource Include="materials\material_18.jpeg" />
-    <Resource Include="materials\material_19.jpeg" />
-    <Resource Include="materials\material_2.jpeg" />
-    <Resource Include="materials\material_20.jpeg" />
-    <Resource Include="materials\material_21.jpeg" />
-    <Resource Include="materials\material_22.jpeg" />
-    <Resource Include="materials\material_3.jpeg" />
-    <Resource Include="materials\material_4.jpeg" />
-    <Resource Include="materials\material_5.jpeg" />
-    <Resource Include="materials\material_6.jpeg" />
-    <Resource Include="materials\material_7.jpeg" />
-    <Resource Include="materials\material_8.jpeg" />
-    <Resource Include="materials\material_9.jpeg" />
-    <Resource Include="materials\picture.png" />
+    <Resource Include="img\materials\material_1.jpeg" />
+    <Resource Include="img\materials\material_10.jpeg" />
+    <Resource Include="img\materials\material_11.jpeg" />
+    <Resource Include="img\materials\material_12.jpeg" />
+    <Resource Include="img\materials\material_13.jpeg" />
+    <Resource Include="img\materials\material_14.jpeg" />
+    <Resource Include="img\materials\material_15.jpeg" />
+    <Resource Include="img\materials\material_16.jpeg" />
+    <Resource Include="img\materials\material_17.jpeg" />
+    <Resource Include="img\materials\material_18.jpeg" />
+    <Resource Include="img\materials\material_19.jpeg" />
+    <Resource Include="img\materials\material_2.jpeg" />
+    <Resource Include="img\materials\material_20.jpeg" />
+    <Resource Include="img\materials\material_21.jpeg" />
+    <Resource Include="img\materials\material_22.jpeg" />
+    <Resource Include="img\materials\material_3.jpeg" />
+    <Resource Include="img\materials\material_4.jpeg" />
+    <Resource Include="img\materials\material_5.jpeg" />
+    <Resource Include="img\materials\material_6.jpeg" />
+    <Resource Include="img\materials\material_7.jpeg" />
+    <Resource Include="img\materials\material_8.jpeg" />
+    <Resource Include="img\materials\material_9.jpeg" />
+    <Resource Include="img\materials\picture.png" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="MaterialsModel.Context.tt">
@@ -244,8 +244,8 @@
       <DependentUpon>MaterialsModel.edmx</DependentUpon>
       <LastGenOutput>MaterialsModel.cs</LastGenOutput>
     </Content>
-    <Resource Include="materials\Одежда для ручек.ico" />
-    <Resource Include="materials\Одежда для ручек.png" />
+    <Resource Include="img\icons\Одежда для ручек.ico" />
+    <Resource Include="img\icons\Одежда для ручек.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
