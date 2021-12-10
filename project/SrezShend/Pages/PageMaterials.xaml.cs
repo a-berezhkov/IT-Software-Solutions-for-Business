@@ -141,7 +141,11 @@ namespace SrezShend.Pages
             {
                 if(materials[i].Image != null)
                 {
-                    if (materials[i].Image.StartsWith("/materials/"))
+                    if (materials[i].Image.StartsWith("/materials"))
+                    {
+                        materials[i].Image = "/img" + materials[i].Image;
+                    }
+                    else if (materials[i].Image.StartsWith(@"\materials"))
                     {
                         materials[i].Image = "/img" + materials[i].Image;
                     }
